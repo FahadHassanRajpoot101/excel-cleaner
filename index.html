@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <title>Excel Data Cleaner</title>
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Header / Instrument Panel -->
+        <header class="panel-header">
+            <div class="header-left">
+                <span class="brand">⌨️ Data-Cleaner</span>
+                <span class="version">v4.7</span>
+            </div>
+            <div class="header-right">
+                <span class="status-led" id="statusLed">⏸ idle</span>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="panel-main">
+
+            <!-- LEFT: Controls & Stats -->
+            <aside class="control-panel">
+
+                <!-- Upload Zone -->
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="fileInput" accept=".xlsx,.xls" />
+                    <label for="fileInput" class="upload-label">
+                        <span class="upload-icon">📁</span>
+                        <span class="upload-text">Drop .xlsx or click</span>
+                    </label>
+                    <span class="upload-hint" id="fileName">no file loaded</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-group">
+                    <button class="btn primary" id="cleanBtn">🧹 Click To Clean Your File</button>
+                    <button class="btn secondary" id="downloadBtn">⬇ Download Cleaned File</button>
+                </div>
+
+                <!-- Stats Panel (The bold moment) -->
+                <div class="stats-panel" id="statsPanel">
+                    <div class="stat-item">
+                        <span class="stat-label">rows</span>
+                        <span class="stat-value" id="statRows">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">clean</span>
+                        <span class="stat-value stat-clean" id="statClean">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">flagged</span>
+                        <span class="stat-value stat-flag" id="statFlagged">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">duplicates</span>
+                        <span class="stat-value stat-dup" id="statDuplicates">0</span>
+                    </div>
+                </div>
+
+                <!-- Brief summary (optional inline) -->
+                <div class="summary-inline" id="summaryInline">
+                    <span>⏺ ready</span>
+                </div>
+
+            </aside>
+
+            <!-- RIGHT: Data Table (Monospace, left-aligned) -->
+            <section class="table-panel">
+                <div class="table-scroll" id="tableContainer">
+                    <p class="table-placeholder">⏎ upload a file to begin</p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer / Status Bar -->
+        <footer class="panel-footer">
+            <span id="footerStatus">⏺ ready</span>
+            <span id="footerStats"></span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
