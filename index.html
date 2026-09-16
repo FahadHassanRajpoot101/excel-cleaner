@@ -100,6 +100,39 @@
 
     </div>
 
+    <!-- Paywall Modal -->
+<div class="modal-overlay" id="paywallModal">
+    <div class="modal">
+        <button class="modal-close" id="modalClose">×</button>
+        <div class="modal-icon">🔒</div>
+        <h2>Free Trial Used</h2>
+        <p>Aapne apni free trial use kar li hai. Unlimited cleaning ke liye subscribe karein.</p>
+        
+        <div class="modal-price">
+            <span class="price">$5</span>
+            <span class="period">/month</span>
+        </div>
+        
+        <ul class="modal-features">
+            <li>✓ Unlimited file cleaning</li>
+            <li>✓ Unlimited rows</li>
+            <li>✓ Priority support</li>
+        </ul>
+        
+        <a href="YOUR_GUMROAD_LINK_HERE" target="_blank" class="btn-subscribe">
+            Subscribe Now →
+        </a>
+        
+        <div class="modal-divider">Already subscribed?</div>
+        
+        <div class="license-input-group">
+            <input type="text" id="licenseInput" placeholder="Enter license key" />
+            <button id="activateBtn">Activate</button>
+        </div>
+        <p class="license-error" id="licenseError"></p>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
