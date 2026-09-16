@@ -489,3 +489,120 @@ body {
         gap: 6px;
     }
 }
+
+
+/* ============================================
+   PAYWALL MODAL
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(23, 27, 33, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: var(--color-paper);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    padding: 32px 28px;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: none; border: none;
+    font-size: 24px; color: #8a8f8a;
+    cursor: pointer; line-height: 1; padding: 4px 8px;
+}
+.modal-close:hover { color: var(--color-text); }
+
+.modal-icon { font-size: 48px; margin-bottom: 12px; }
+.modal h2 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+.modal p { font-size: 14px; color: #5a605a; margin-bottom: 20px; line-height: 1.5; }
+
+.modal-price {
+    margin: 20px 0;
+    display: flex; align-items: baseline; justify-content: center; gap: 4px;
+}
+.modal-price .price {
+    font-family: var(--font-mono);
+    font-size: 42px; font-weight: 600;
+    color: var(--color-ledger);
+}
+.modal-price .period { font-size: 16px; color: #8a8f8a; }
+
+.modal-features {
+    list-style: none; text-align: left;
+    margin: 20px 0; padding: 16px;
+    background: #fafbf9;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+}
+.modal-features li {
+    font-size: 13px; padding: 4px 0;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+}
+
+.btn-subscribe {
+    display: block; width: 100%; padding: 12px;
+    background: var(--color-ledger); color: #fff;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono);
+    font-size: 14px; font-weight: 600;
+    margin-top: 12px;
+}
+.btn-subscribe:hover { background: #1a3149; }
+
+.modal-divider {
+    margin: 24px 0 16px;
+    font-size: 12px; color: #8a8f8a;
+    font-family: var(--font-mono);
+    position: relative;
+}
+.modal-divider::before, .modal-divider::after {
+    content: ''; position: absolute; top: 50%;
+    width: 35%; height: 1px; background: var(--color-hairline);
+}
+.modal-divider::before { left: 0; }
+.modal-divider::after { right: 0; }
+
+.license-input-group { display: flex; gap: 8px; }
+.license-input-group input {
+    flex: 1; padding: 10px 12px;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono); font-size: 13px;
+    background: #fff; color: var(--color-text);
+}
+.license-input-group input:focus {
+    outline: none; border-color: var(--color-ledger);
+}
+.license-input-group button {
+    padding: 10px 16px; background: transparent;
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--border-radius);
+    font-family: var(--font-mono); font-size: 13px;
+    font-weight: 500; cursor: pointer;
+}
+.license-input-group button:hover { background: #eaece8; }
+
+.license-error {
+    color: #b33a3a !important;
+    font-size: 12px !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    min-height: 16px;
+}
